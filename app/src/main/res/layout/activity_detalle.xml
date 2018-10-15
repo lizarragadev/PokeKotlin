@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:background="@drawable/fondo">
+
+    <ImageView
+        android:id="@+id/ivDetalleImagen"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_centerHorizontal="true"
+        app:layout_anchor="@+id/cardView"
+        app:layout_anchorGravity="top|center"
+        android:elevation="10dp"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/cardView"
+        app:cardCornerRadius="15dp"
+        card_view:contentPadding="25dp"
+        app:cardElevation="5dp"
+        android:foreground="?selectableItemBackground"
+        android:clickable="true"
+        android:layout_marginTop="170dp"
+        android:layout_marginBottom="170dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDetalleTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="40dp"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"/>
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="3dp"
+                android:background="#64E588"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.design.widget.CoordinatorLayout>
