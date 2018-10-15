@@ -14,12 +14,7 @@ class DetalleActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detalle)
         supportActionBar!!.hide()
 
-        val pokemon = intent.getSerializableExtra("poke") as Pokemon
-        tvDetalleTitulo.text = pokemon.name
 
-        Glide.with(this)
-                .load("http://pokeapi.co/media/sprites/pokemon/" + pokemon.number + ".png")
-                .into(ivDetalleImagen)
 
     }
 }
