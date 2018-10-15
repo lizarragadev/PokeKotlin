@@ -7,6 +7,10 @@ import com.miramicodigo.restful1.model.PokemonResponse
 
 interface PokeInterface {
 
-
+    @GET("pokemon")
+    fun obtenerListaPokemon(
+            @Query("limit") limit: Int,
+            @Query("offset") offset: Int
+    ): Call<PokemonResponse>
 
 }

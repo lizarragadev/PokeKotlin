@@ -27,6 +27,7 @@ class PokemonAdapter(private val context: Context) : RecyclerView.Adapter<Pokemo
         val p = dataset[position]
 
 
+
     }
 
     override fun getItemCount(): Int {
@@ -39,11 +40,11 @@ class PokemonAdapter(private val context: Context) : RecyclerView.Adapter<Pokemo
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-
+        val fotoImageView = itemView.findViewById(R.id.ivImagen) as ImageView
 
         init {
             itemView.setOnClickListener {
+
 
             }
         }
