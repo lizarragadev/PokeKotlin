@@ -25,11 +25,9 @@ class PokemonAdapter(private val context: Context) : RecyclerView.Adapter<Pokemo
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val p = dataset[position]
-        //holder.nombreTextView.text = p.name
 
-        Glide.with(context)
-                .load("http://pokeapi.co/media/sprites/pokemon/" + p.number + ".png")
-                .into(holder.fotoImageView)
+
+
     }
 
     override fun getItemCount(): Int {
@@ -42,14 +40,12 @@ class PokemonAdapter(private val context: Context) : RecyclerView.Adapter<Pokemo
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val fotoImageView: ImageView = itemView.findViewById(R.id.ivImagen) as ImageView
-        //val nombreTextView: TextView = itemView.findViewById(R.id.tvNombre)
+        val fotoImageView = itemView.findViewById(R.id.ivImagen) as ImageView
 
         init {
             itemView.setOnClickListener {
-                val intent = Intent(context, DetalleActivity::class.java)
-                intent.putExtra("poke", dataset[adapterPosition])
-                context.startActivity(intent)
+
+
             }
         }
     }

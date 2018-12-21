@@ -52,10 +52,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        retrofit = Retrofit.Builder()
-                .baseUrl("http://pokeapi.co/api/v2/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
+
 
         sePuedeCargar = true
         cantidadLote = 0
@@ -78,11 +75,6 @@ class MainActivity : AppCompatActivity() {
                     val pokemonResponse = response.body()
                     val listaPokemon = pokemonResponse!!.results
                     listaPokemonAdapter!!.adicionarListaPokemon(listaPokemon!!)
-                    for (poke in listaPokemon) {
-                        println(">>>>>>>>>>> ${poke.name}")
-                        println(">>>>>>>>>>> ${poke.url}")
-                        println(">>>>>>>>>>> ${poke.number}")
-                    }
                 }
             }
         })
