@@ -1,4 +1,4 @@
-package com.miramicodigo.restful1
+package com.miramicodigo.pokekotlin
 
 import org.junit.Test
 

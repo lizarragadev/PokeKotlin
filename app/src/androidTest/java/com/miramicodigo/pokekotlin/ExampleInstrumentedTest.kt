@@ -1,4 +1,4 @@
-package com.miramicodigo.restful1
+package com.miramicodigo.pokekotlin
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
