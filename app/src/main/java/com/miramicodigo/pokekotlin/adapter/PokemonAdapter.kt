@@ -1,18 +1,16 @@
-package com.miramicodigo.restful1.adapter
+package com.miramicodigo.pokekotlin.adapter
 
 import android.content.Context
-import android.content.Intent
+import android.graphics.Typeface
 import android.widget.TextView
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.miramicodigo.restful1.R
-import com.miramicodigo.restful1.model.Pokemon
-import com.miramicodigo.restful1.ui.DetalleActivity
+import com.miramicodigo.pokekotlin.R
+import com.miramicodigo.pokekotlin.model.Pokemon
 
 class PokemonAdapter(private val context: Context) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
 
@@ -25,10 +23,12 @@ class PokemonAdapter(private val context: Context) : RecyclerView.Adapter<Pokemo
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val p = dataset[position]
-        //holder.nombreTextView.text = p.name
 
+        // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
+
+        holder.nombreTextView.text = p.name
         Glide.with(context)
-                .load("http://pokeapi.co/media/sprites/pokemon/" + p.number + ".png")
+                .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.number}.png")
                 .into(holder.fotoImageView)
     }
 
@@ -42,15 +42,7 @@ class PokemonAdapter(private val context: Context) : RecyclerView.Adapter<Pokemo
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val fotoImageView: ImageView = itemView.findViewById(R.id.ivImagen) as ImageView
-        //val nombreTextView: TextView = itemView.findViewById(R.id.tvNombre)
-
-        init {
-            itemView.setOnClickListener {
-                val intent = Intent(context, DetalleActivity::class.java)
-                intent.putExtra("poke", dataset[adapterPosition])
-                context.startActivity(intent)
-            }
-        }
+        val fotoImageView = itemView.findViewById(R.id.ivImagen) as ImageView
+        val nombreTextView = itemView.findViewById(R.id.tvNombre) as TextView
     }
 }
